@@ -1,0 +1,30 @@
+All Stata .do files have been tested and run properly. 
+There are three .do files for two tasks - stress-test and panel analysis.
+
+Overall, data for all models comes from FRED and FFIED. The raw csv files are in folders data_bank and data_fred
+but they are not necessary since they have been combined in six csv files: data_4, data_5, data_6, data_101, data_102 and data_103
+based on codes of banks. 
+
+Each of these csv files contains bank specific data as well as macroeconomic indicators.
+These files are used to build panel regressions.
+
+The stress testing exercise is based on data from FRED and aggregated banking data for all American banks coming from FFIEC.
+These raw files are in folder NATIONAL which is in folder data_bank. However, all necessary data have been combined 
+
+
+
+Task 1. Stress-testing resilience of national banking system
+
+The stress-testing exercise is conducted using stress.do Stata file. The .do file runs smoothly once
+the directory is updated. The stress.do and stress.xlsx files should be in the same directory. 
+The macroeconomic scenarios for stress.do are coming from FED and are described in detail in report.
+The bank specific data comes files in folder NATIONAL and they all have prefix nation_
+
+
+Task 2. Panel regression analysis
+
+To build panel, you will have to run Stata file individual_files.do. This file creates panel based on data_4.csv, ..., data_103.csv files.
+It finally creates file panel.dta which is used by script modeling.do which estimates panel regressions. 
+To build panel models for the first time, you will have to put files data_4.csv, ..., data_103.csv, individual_files.do and modeling.do 
+in the same directory, update the directory adress in both .do files and then run individual_files.do and modeling.do in this order. 
+If the file panel.dta already exists, you can just run modeling.do script.
